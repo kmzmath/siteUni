@@ -9,7 +9,7 @@ import { rankingAdapter, snapshotAdapter } from "./utils/adapters";
 export const getRanking = async () => {
   const res = await fetch(`${BASE_URL}${endpoints.ranking}`, {
     next: {
-      revalidate: 60 * 60 * 2, // 2 hours
+      revalidate: 1,
     },
   });
   const data = (await res.json()) as RemoteRanking;
@@ -22,7 +22,7 @@ export const getRanking = async () => {
 export const getRankingSnapshots = async () => {
   const res = await fetch(`${BASE_URL}${endpoints.rankingSnapshots}`, {
     next: {
-      revalidate: 60 * 60 * 12, // 12 hours
+      revalidate: 1,
     },
   });
   const { data } = (await res.json()) as { data: RemoteSnapshot[] };

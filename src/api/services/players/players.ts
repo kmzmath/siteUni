@@ -7,7 +7,7 @@ export const getPlayers = async (teamId: number) => {
     `${BASE_URL}${endpoints.players.replace(":teamId", teamId.toString())}`,
     {
       next: {
-        revalidate: 60 * 60 * 2, // 2 hours
+        revalidate: 1,
       },
     }
   );

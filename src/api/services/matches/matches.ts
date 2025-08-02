@@ -9,7 +9,7 @@ import { matchAdapter } from "./utils/adapters";
 export const getMatches = async () => {
   const res = await fetch(`${BASE_URL}${endpoints.matches}`, {
     next: {
-      revalidate: 60 * 60 * 6, // 6 hours
+      revalidate: 1,
     },
   });
   const data = (await res.json()) as RemoteMatch[];

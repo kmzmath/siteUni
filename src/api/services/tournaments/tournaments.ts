@@ -7,7 +7,7 @@ import { tournamentAdapter } from "./utils/adapters";
 export const getTournaments = async () => {
   const res = await fetch(`${BASE_URL}${endpoints.tournaments}`, {
     next: {
-      revalidate: 60 * 60 * 2, // 2 hours
+      revalidate: 1,
     },
   });
   const data = (await res.json()) as RemoteTournament[];
